@@ -316,7 +316,7 @@ section .title::after {
 }
 
 .services .serv-content .card:hover {
-  background: #1e3551;
+  background: #ffffff;
 }
 
 .services .serv-content .card .box {
@@ -329,7 +329,7 @@ section .title::after {
 
 .services .serv-content .card i {
   font-size: 50px;
-  color: #1e3551;
+  color: #64a2ee;
   transition: color 0.3s ease;
 }
 
@@ -349,7 +349,7 @@ section .title::after {
 
 /* Skills Section */
 .skills {
-  background: radial-gradient(#e1efff, white);
+  background: radial-gradient(#dddfe1, white);
 }
 
 .skills .title::after {
