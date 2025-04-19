@@ -1,0 +1,67 @@
+{
+  "widgets": [
+    {
+      "type": "metric",
+      "x": 0,
+      "y": 0,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "metrics": [
+          ["PortfolioApp", "cpu_usage_idle", "InstanceId", "${aws:InstanceId}"],
+          ["PortfolioApp", "cpu_usage_user", "InstanceId", "${aws:InstanceId}"],
+          ["PortfolioApp", "cpu_usage_system", "InstanceId", "${aws:InstanceId}"]
+        ],
+        "view": "timeSeries",
+        "stacked": false,
+        "region": "${aws:region}",
+        "title": "CPU Usage"
+      }
+    },
+    {
+      "type": "metric",
+      "x": 12,
+      "y": 0,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "metrics": [
+          ["PortfolioApp", "mem_used_percent", "InstanceId", "${aws:InstanceId}"]
+        ],
+        "view": "timeSeries",
+        "stacked": false,
+        "region": "${aws:region}",
+        "title": "Memory Usage"
+      }
+    },
+    {
+      "type": "metric",
+      "x": 0,
+      "y": 6,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "metrics": [
+          ["PortfolioApp", "disk_used_percent", "InstanceId", "${aws:InstanceId}"]
+        ],
+        "view": "timeSeries",
+        "stacked": false,
+        "region": "${aws:region}",
+        "title": "Disk Usage"
+      }
+    },
+    {
+      "type": "log",
+      "x": 12,
+      "y": 6,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "query": "SOURCE '/portfolio/nginx/access' | stats count(*) by bin(5m)",
+        "region": "${aws:region}",
+        "title": "Nginx Access Logs",
+        "view": "timeSeries"
+      }
+    }
+  ]
+} 
