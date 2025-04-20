@@ -46,4 +46,4 @@ logs/
 # Exclude sensitive files
 vendor/
 composer.lock
-php_errors.log 
+php_errors.log api.txt
