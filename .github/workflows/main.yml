@@ -3,32 +3,20 @@ name: CI/CD Pipeline
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    
-    - name: Build Docker image
-      run: docker build -t portfolio .
-    
-    - name: Run container
-      run: docker run -d -p 8080:80 portfolio
-    
-    - name: Test website
-      run: |
-        sleep 5
-        curl -s http://localhost:8080 | grep -q "Shamsh Tabrez"
-    
-  deploy:
-    needs: build-and-test
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    steps:
-    - name: Deploy to production
-      run: |
-        echo "Deployment steps would go here"
-        # Add your deployment steps (e.g., deploying to AWS, GCP, etc.) 
+      - uses: actions/checkout@v2
+
+      - name: Build Docker image
+        run: docker build -t portfolio .
+
+      - name: Run container
+        run: docker run -d -p 8080:80 portfolio
+
+      - name: Test website
+        run: |
+          sleep 5
+          curl -s http://localhost:8080 | grep -q "Shamsh Tabrez"
