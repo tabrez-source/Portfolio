@@ -559,11 +559,11 @@ header.sticky {
 }
 
 .aws::before {
-  width: 90%;
+  width: 80%;
 }
 
 .azure::before {
-  width: 75%;
+  width: 90%;
 }
 
 .github-actions::before {
